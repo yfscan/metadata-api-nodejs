@@ -15,7 +15,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', function(req, res) {
-  res.send('Get ready for yfLambda!');
+  res.send('Get ready for yfScan Gem$!');
 })
 
 app.get('/api/:token_id', function(req, res) {
