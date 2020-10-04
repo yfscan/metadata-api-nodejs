@@ -10,3 +10,7 @@ npm-debug.log
 # Docker
 Dockerfile
 docker-compose.yml
+
+generate-img.py
+db.pickle
+staker-abi.json
