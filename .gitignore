@@ -14,3 +14,5 @@ docker-compose.yml
 generate-img.py
 db.pickle
 staker-abi.json
+
+update-opensea.py

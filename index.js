@@ -22,7 +22,8 @@ app.get('/api/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const attributes = db[tokenId]
   const data = {
-    'image': `${HOST}/images/` + attributes["img"],
+    'image': `${HOST}/images` + attributes["img"],
+    'background_color': '191919',
     'attributes': [
       {
         'trait_type': 'amount',
