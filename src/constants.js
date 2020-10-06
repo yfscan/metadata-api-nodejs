@@ -1,4 +1,4 @@
-const HOST = 'https://yscan.herokuapp.com'
+const HOST = 'https://yfscan.herokuapp.com'
 
 module.exports = {
   HOST
