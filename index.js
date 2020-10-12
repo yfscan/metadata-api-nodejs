@@ -22,12 +22,14 @@ app.get('/api/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const attributes = db[tokenId]
   const data = {
+    'name': 'Gem$ ' + tokenId,
     'image': `${HOST}/images` + attributes["img"],
     'background_color': '191919',
     'attributes': [
       {
         'trait_type': 'amount',
-        'value': attributes['amount']
+        'value': attributes['amount'],
+        'display_type': 'number'
       },
       {
         'trait_type': 'minter',
