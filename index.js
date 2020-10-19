@@ -24,7 +24,7 @@ app.get('/api/:token_id', function(req, res) {
   const attributes = db[tokenId]
   const data = {
     'name': 'Gem$ ' + tokenId,
-    'image': `${HOST}/images` + attributes["img"],
+    'image': `https://yfscan.herokuapp.com/gems` + attributes["img"],
     'background_color': '191919',
     'attributes': [
       {
