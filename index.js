@@ -49,6 +49,10 @@ app.get('/mons/:token_id', function(req, res) {
     'image': `https://yfscan.herokuapp.com/` + d["img"],
     'attributes': [
       {
+        'trait_type': 'ID',
+        'value': tokenId
+      },
+      {
         'trait_type': 'minter',
         'value': d['minter']
       },
