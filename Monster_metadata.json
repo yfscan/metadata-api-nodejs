@@ -1,0 +1,7 @@
+{
+  "name": "Monster",
+  "description": "neural network generated pixel monsters",
+  "repository": "https://github.com/yfscan/Monster-contracts",
+  "logo": "https://yfscan.herokuapp.com/mon_1_static.png",
+  "keywords": ["nft", "crypto", "opensea", "erc721", "0xmons", "ai", "gan", "generative"]
+}
