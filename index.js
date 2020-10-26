@@ -3,7 +3,8 @@ const path = require('path')
 // const { HOST } = require('./src/constants')
 const fs = require('fs');
 let db = JSON.parse(fs.readFileSync('./src/database.json'));
-let mons_db = JSON.parse(fs.readFileSync('./src/mons-database.json'));
+let mons_db = JSON.parse(fs.readFileSync('./src/mons_database.json'));
+let monsMetadata = JSON.parse(fs.readFileSync('./monster_metadata.json'));
 
 const PORT = process.env.PORT || 5000;
 
