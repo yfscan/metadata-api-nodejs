@@ -20,6 +20,10 @@ app.get('/', function(req, res) {
   res.send('Get ready for yfScan Gem$!');
 });
 
+app.get('/mon-data', function(req, res) {
+  res.send(monsMetadata);
+})
+
 app.get('/api/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const attributes = db[tokenId]
@@ -42,12 +46,34 @@ app.get('/api/:token_id', function(req, res) {
   res.send(data)
 });
 
+app.get('/api/:token_id', function(req, res) {
+  const tokenId = parseInt(req.params.token_id).toString()
+  const attributes = db[tokenId]
+  const data = {
+    'name': 'βetagem ' + tokenId,
+    'image': `https://yfscan.herokuapp.com/gems` + attributes["img"],
+    'background_color': '191919',
+    'attributes': [
+      {
+        'trait_type': 'amount',
+        'value': attributes['amount'],
+        'display_type': 'number'
+      },
+      {
+        'trait_type': 'minter',
+        'value': attributes['minter']
+      }
+    ]
+  }
+  res.send(data)
+});
 app.get('/mons/:token_id', function(req, res) {
   const tokenId = parseInt(req.params.token_id).toString()
   const d = mons_db[tokenId]
   const data = {
     'name': d["name"],
     'image': `https://yfscan.herokuapp.com/` + d["img"],
+    'background_color': '000000',
     'attributes': [
       {
         'trait_type': 'ID',
@@ -67,7 +93,6 @@ app.get('/mons/:token_id', function(req, res) {
         'value': d['parent1'],
         'display_type': 'number'
       },
-
       {
         'trait_type': 'parent 2',
         'value': d['parent2'],
@@ -83,7 +108,6 @@ app.get('/mons/:token_id', function(req, res) {
         'value': d['amount'],
         'display_type': 'number'
       },
-
       {
         'trait_type': 'duration',
         'value': d['duration'],
@@ -103,7 +127,6 @@ app.get('/mons/:token_id', function(req, res) {
   }
   res.send(data)
 });
-
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
